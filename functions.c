@@ -50,7 +50,7 @@ int print_string(va_list types, char buffer[], int flags, int width, int precisi
 		if (precision >= 6)
 			str = "    ";
 	}
-
+	
 	while (str[length] != '\0')
 		length++;
 	if (precision >= 0 && precision < length)

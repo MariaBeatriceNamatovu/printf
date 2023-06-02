@@ -3,7 +3,7 @@
 /*print unsigned number*/
 
 /**
- * print_string - prints a string
+ * print_unsigned - prints a unsigned number
  * @types: list of arguments
  * @buffer: buffer array to handle print
  * @flags: calculates active flags
@@ -134,6 +134,7 @@ int print_hexa(va_list types, char map_to[], char buffer[], int flags, char flag
 	UNUSED(width);
 
 	num = convert_size_unsgnd(num, size);
+
 	if (num == 0)
 		buffer[i--] = '0';
 	buffer[BUFF_SIZE - 1] = '\0';
