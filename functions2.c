@@ -25,7 +25,7 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
 	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
 
-	buffer[BUUF_SIZE - 1] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 	UNUSED(precision);
 	num_addrs = (unsigned long)addrs;
 
@@ -75,7 +75,7 @@ int print_non_printable(va_list types, char buffer[], int flags, int width, int 
 
 	while (str[i] != '\0')
 	{
-		if (is_printable(str[i])
+		if (is_printable(str[i]))
 				buffer[i + offset] = str[i];
 		else
 			offset += append_hexa_code(str[i], buffer, i + offset);
@@ -99,7 +99,7 @@ int print_non_printable(va_list types, char buffer[], int flags, int width, int 
  * Return: number of chars printed
  */
 
-int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_reverse(va_list types, int flags, int width, int precision, int size)
 {
 	char *str;
 	int i, count = 0;
@@ -141,7 +141,7 @@ int print_reverse(va_list types, char buffer[], int flags, int width, int precis
  *
  * Return: number of chars printed
  */
-int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_rot13string(va_list types, int flags, int width, int precision, int size)
 {
 	char x;
 	char *str;

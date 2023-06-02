@@ -76,7 +76,8 @@ int print_string(va_list types, char buffer[], int flags, int width, int precisi
 
 	return (write(1, str, length));
 }
-/* print precent sign*/
+/* print percent sign*/
+
 /**
  * print_percent - prints a percent sign
  * @types: list of arguments
@@ -130,8 +131,8 @@ int print_int(va_list types, char buffer[], int flags, int width, int precision,
 
 	if (n < 0)
 	{
-		num = (unsigned long int)((-1 * n);
-		is_negative = 1;
+		num = (unsigned long int)((-1 * n));
+		is_negative = 1;;
 	}
 
 	while (num > 0)
@@ -177,7 +178,7 @@ int print_binary(va_list types, char buffer[], int flags, int width, int precisi
 		m /= 2;
 		a[i] = (n / m) % 2;
 	}
-	for (i = 0; sum = 0, count = 0; i < 32; i++)
+	for (i = 0, sum = 0, count = 0; i < 32; i++)
 	{
 		sum += a[i];
 		if (sum || i == 31)
